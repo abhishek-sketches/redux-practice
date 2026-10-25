@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App.jsx";
 
-test('renders learn react link', () => {
+test("renders the page heading and docs link", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: /react redux practice/i })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /react docs/i })).toBeInTheDocument();
 });
